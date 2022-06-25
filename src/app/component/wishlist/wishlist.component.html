@@ -1,1 +1,36 @@
-<p>wishlist works!</p>
+<ng-container *ngIf="products.length !=0">
+
+    <div class="container">
+        <div class="row">
+            <ng-container *ngFor="let item of products">
+                <div class="card col-md-4">
+                    <img src="{{item.image}}" alt="">
+                    <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5>
+                    <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
+                    <p><strong>Price:</strong> ${{item.price}}</p>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button class="btn btn-secondary"  (click)=addtocart(item)>Add to cart</button>
+                      </div>
+                    
+                </div>
+            </ng-container>
+    
+        </div>
+    </div>
+</ng-container>
+
+
+<ng-container *ngIf="products.length ==0">
+    <div class="container">
+        <div class="card">
+            <h1 class="card-title">Wishlist</h1>
+        </div>
+        <div class="center">
+            <strong><h2>Your Wishlist is empty</h2></strong>
+            <h3>Add Items to wishlist</h3>
+            <button routerLink="/products" class="btn btn-primary">Add to wishlist</button>
+        </div>
+    
+    </div>
+</ng-container>
+

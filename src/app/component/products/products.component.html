@@ -36,7 +36,14 @@
                 <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5>
                 <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
                 <p><strong>Price:</strong> ${{item.price}}</p>
-                <button class="btn btn-primary"  (click)=addtocart(item)>Add to cart</button>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button class="btn btn-secondary">
+                        <i style="font-size: 30px;" class="	far fa-heart"></i>
+                        <div style="font-size: 10px;" class="badge bg-danger"></div>
+                    </button>
+                    <button class="btn btn-secondary"  (click)=addtocart(item)>Add to cart</button>
+                  </div>
+                
             </div>
         </ng-container>
 
